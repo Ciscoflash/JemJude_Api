@@ -4,7 +4,7 @@ import sendEmail from "../utils/resend";
 export const contactUsRoute = async (req: Request, res: Response) => {
   const { firstName, lastName, phone, message } = req.body;
 
-  if (!req.body) {
+  if (!firstName || !lastName || !phone || !message) {
     return res.status(404).send({ message: "Field Required" });
   }
 
