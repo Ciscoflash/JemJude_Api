@@ -9,7 +9,17 @@ import contactRouter from "./routes/Contactus";
 import { CreateTranscription } from "./services/Translation";
 import connect from "./config/Database";
 import path from "path";
+import cors from "cors";
 connect();
+const allowedOrigins = [
+  "https://jemjude-api.onrender.com",
+  "http://localhost:3000",
+];
+app.use(
+  cors({
+    origin: allowedOrigins,
+  })
+);
 app.get("/", (req, res) => {
   res.send("Welcome To Landbirds");
 });

@@ -13,7 +13,15 @@ const Localization_1 = __importDefault(require("./routes/Localization"));
 const Contactus_1 = __importDefault(require("./routes/Contactus"));
 const Database_1 = __importDefault(require("./config/Database"));
 const path_1 = __importDefault(require("path"));
+const cors_1 = __importDefault(require("cors"));
 (0, Database_1.default)();
+const allowedOrigins = [
+    "https://jemjude-api.onrender.com",
+    "http://localhost:3000",
+];
+app.use((0, cors_1.default)({
+    origin: allowedOrigins,
+}));
 app.get("/", (req, res) => {
     res.send("Welcome To Landbirds");
 });
