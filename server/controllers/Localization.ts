@@ -41,7 +41,7 @@ export const CreateLocalizationRequest = async (
     const Localization = await createLocalization(LocalizationData);
     if (Localization) {
       sendEmail({
-        receiver: "abrahamjude1999@gmail.com",
+        receiver: "Okekevicktur@gmail.com",
         title: "New Quotation Alert",
         description: `
       <!DOCTYPE html>

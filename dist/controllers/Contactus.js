@@ -16,10 +16,14 @@ exports.contactUsRoute = void 0;
 const Contactus_1 = require("../services/Contactus");
 const resend_1 = __importDefault(require("../utils/resend"));
 const contactUsRoute = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { firstName, lastName, phone, message } = req.body;
-    if (!req.body) {
+    const { fullName, email, phone, message } = req.body;
+    if (!req.body.fullName ||
+        !req.body.email ||
+        !req.body.phone ||
+        !req.body.message) {
         return res.status(404).send({ message: "Field Required" });
     }
+    console.log(req.body);
     const contactus = yield (0, Contactus_1.CreateContactus)(req.body);
     if (contactus) {
         (0, resend_1.default)({
@@ -28,7 +32,7 @@ const contactUsRoute = (req, res) => __awaiter(void 0, void 0, void 0, function*
             description: `
       <!DOCTYPE html>
   <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
-  
+
   <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -37,26 +41,26 @@ const contactUsRoute = (req, res) => __awaiter(void 0, void 0, void 0, function*
       * {
         box-sizing: border-box;
       }
-  
+
       body {
         margin: 0;
         padding: 0;
       }
-  
+
       a[x-apple-data-detectors] {
         color: inherit !important;
         text-decoration: inherit !important;
       }
-  
+
       #MessageViewBody a {
         color: inherit;
         text-decoration: none;
       }
-  
+
       p {
         line-height: inherit
       }
-  
+
       .desktop_hide,
       .desktop_hide table {
         mso-hide: all;
@@ -64,39 +68,39 @@ const contactUsRoute = (req, res) => __awaiter(void 0, void 0, void 0, function*
         max-height: 0px;
         overflow: hidden;
       }
-  
+
       .image_block img+div {
         display: none;
       }
-  
+
       @media (max-width:700px) {
-  
+
         .desktop_hide table.icons-inner,
         .social_block.desktop_hide .social-table {
           display: inline-block !important;
         }
-  
+
         .icons-inner {
           text-align: center;
         }
-  
+
         .icons-inner td {
           margin: 0 auto;
         }
-  
+
         .mobile_hide {
           display: none;
         }
-  
+
         .row-content {
           width: 100% !important;
         }
-  
+
         .stack .column {
           width: 100%;
           display: block;
         }
-  
+
         .mobile_hide {
           min-height: 0;
           max-height: 0;
@@ -104,7 +108,7 @@ const contactUsRoute = (req, res) => __awaiter(void 0, void 0, void 0, function*
           overflow: hidden;
           font-size: 0px;
         }
-  
+
         .desktop_hide,
         .desktop_hide table {
           display: table !important;
@@ -113,7 +117,7 @@ const contactUsRoute = (req, res) => __awaiter(void 0, void 0, void 0, function*
       }
     </style>
   </head>
-  
+
   <body style="background-color: #f9f9f9; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
     <table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f9f9f9;">
       <tbody>
@@ -384,7 +388,7 @@ const contactUsRoute = (req, res) => __awaiter(void 0, void 0, void 0, function*
       </tbody>
     </table><!-- End -->
   </body>
-  
+
   </html>
       `,
         });

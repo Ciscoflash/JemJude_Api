@@ -52,7 +52,7 @@ export const CreateTranslationRequest = async (req: Request, res: Response) => {
 
     if (Transcription) {
       sendEmail({
-        receiver: "abrahamjude1999@gmail.com",
+        receiver: "Okekevicktur@gmail.com",
         title: "New Quotation Alert",
         description: `
       <!DOCTYPE html>
