@@ -19,7 +19,7 @@ export const contactUsRoute = async (req: Request, res: Response) => {
 
   if (contactus) {
     sendEmail({
-      receiver: "Okekevicktur@gmail.com",
+      receiver: ["contact@jemjudglobal.com"],
       title: "New Customer Alert",
       description: `
       <!DOCTYPE html>

@@ -1,6 +1,6 @@
 import express from "express";
 const app = express();
-const port: number = 3000;
+const port: number = 3001 || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 import router from "./routes/Translation";

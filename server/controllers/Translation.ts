@@ -11,20 +11,29 @@ const storage = multer.diskStorage({
     return cb(null, "./public");
   },
   filename: function (req: Request, file: any, cb: any) {
-    // return cb(null, `${Date.now()}_${file.originalname}`);
-    return cb(null, `${file.originalname}`);
+    return cb(null, `${Date.now()}_${file.originalname}`);
+    // return cb(null, `${file.originalname}`);
   },
 });
 
 // these is to filter the pdf files
-const fileFilter = function (_req: Request, file: any, cb: any) {
-  const allowedMimeTypes = ["application/pdf"]; // Add more MIME types if needed
-  if (allowedMimeTypes.includes(file.mimetype)) {
-    // The file is a PDF
+// const fileFilter = function (_req: Request, file: any, cb: any) {
+//   const allowedMimeTypes = ["application/pdf"]; // Add more MIME types if needed
+//   if (allowedMimeTypes.includes(file.mimetype)) {
+//     // The file is a PDF
+//     cb(null, true);
+//   } else {
+//     // The file is not a PDF
+//     cb(null, false);
+//   }
+// };
+
+const fileFilter = function (req: Request, file: any, cb: any) {
+  // Accept only PDF files (you can adjust the mime types accordingly)
+  if (file.mimetype === "application/pdf") {
     cb(null, true);
   } else {
-    // The file is not a PDF
-    cb(null, false);
+    cb(new Error("Unsupported file type"), false);
   }
 };
 
@@ -38,21 +47,23 @@ export const CreateTranslationRequest = async (req: Request, res: Response) => {
 
     // Specify the file path
     const filePath = req.file?.path; // Replace with the actual file path
-    let bufferContent;
+    let bufferContent = await fs.promises.readFile(filePath);
+
     // Read the file and convert it to a Buffer
-    fs.readFile(filePath, (err: any, data: any) => {
-      if (err) {
-        console.error("Error reading the file:", err);
-      } else {
-        bufferContent = data;
-      }
-    });
+    // fs.readFile(filePath, (err: any, data: any) => {
+    //   if (err) {
+    //     console.error("Error reading the file:", err);
+    //   } else {
+    //     bufferContent = data;
+    //   }
+    // });
     const TranscriptionData = { ...data, file }; // these is to combine the value of data and filename
     const Transcription = await CreateTranscription(TranscriptionData);
 
+    // receiver: ["contact@jemjudglobal.com"],
     if (Transcription) {
       sendEmail({
-        receiver: "Okekevicktur@gmail.com",
+        receiver: ["contact@jemjudglobal.com"],
         title: "New Quotation Alert",
         description: `
       <!DOCTYPE html>
@@ -1439,7 +1450,7 @@ export const CreateTranslationRequest = async (req: Request, res: Response) => {
 
       `,
         attarchment: file,
-        buffer: bufferContent,
+        path: filePath,
       });
 
       return res.json({
