@@ -8,6 +8,7 @@ export interface CareerDto extends mongoose.Document {
   country: string;
   cv: any;
   role: string;
+  file: any;
 }
 
 const CareerSchema = new mongoose.Schema({
@@ -32,6 +33,7 @@ const CareerSchema = new mongoose.Schema({
   role: {
     type: String,
   },
+  file: String,
 });
 
 const Career = mongoose.model("Career", CareerSchema);

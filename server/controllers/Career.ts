@@ -376,7 +376,7 @@ export const createCarear = async (req: Request, res: Response) => {
                                       mso-line-height-alt: 50.4px;
                                     "
                                   >
-                                    <p style="margin: 0">New Quote Alert</p>
+                                    <p style="margin: 0">New Quotation Alert</p>
                                   </div>
                                 </td>
                               </tr>
@@ -550,7 +550,7 @@ export const createCarear = async (req: Request, res: Response) => {
                                       mso-line-height-alt: 42px;
                                     "
                                   >
-                                    <p style="margin: 0">Quote Details</p>
+                                    <p style="margin: 0">Quotation Details</p>
                                   </div>
                                 </td>
                               </tr>
@@ -707,7 +707,7 @@ export const createCarear = async (req: Request, res: Response) => {
                                       <strong
                                         ><span
                                           ><span style="color: #5d77a9"
-                                            >Appication Type</span
+                                            >Application Type</span
                                           ></span
                                         ></strong
                                       >
