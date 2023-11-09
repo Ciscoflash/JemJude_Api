@@ -24,7 +24,7 @@ export const createCarear = async (req: Request, res: Response) => {
 
     sendEmail({
       receiver: ["contact@jemjudglobal.com"],
-      title: "New Quuotation Alert",
+      title: "New Quotation Alert",
       description: `
       <!DOCTYPE html>
 <html
