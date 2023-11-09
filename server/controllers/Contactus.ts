@@ -8,12 +8,11 @@ export const contactUsRoute = async (req: Request, res: Response) => {
     !req.body.fullName ||
     !req.body.email ||
     !req.body.phone ||
-    !req.body.message
+    !req.body.message ||
+    !req.body
   ) {
     return res.status(404).send({ message: "Field Required" });
   }
-
-  console.log(req.body);
 
   const contactus = await CreateContactus(req.body);
 

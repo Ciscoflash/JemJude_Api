@@ -30,6 +30,8 @@ export const CreateLocalizationRequest = async (
 
     if (!req.file) {
       return res.status(400).json({ error: "No file uploaded." });
+    } else if (!req.body) {
+      return res.status(400).json({ message: "Field Required" });
     }
 
     const file = req.file?.filename;

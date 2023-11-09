@@ -9,6 +9,7 @@ interface emailData {
   attarchment?: any;
   path?: any;
 }
+
 const sendEmail = async (data: emailData) => {
   resend.emails.send({
     // from: "jemjudeglobalbridge@resend.dev",
