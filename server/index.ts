@@ -1,3 +1,4 @@
+require("dotenv").config();
 import express from "express";
 const app = express();
 const port: number = 3001 || 3000;
@@ -39,7 +40,7 @@ app.post("/validateRecaptcha", async (req, res) => {
     if (!recaptchaToken) {
       return res.status(400).json("Recaptcha token is required");
     }
-    const secretKey = "6Lf2LAopAAAAALtiExm7mUDd-mZjVI4cfs47bNTp";
+    const secretKey = process.env.GOOGLECAPTCHA_SECRET;
     const { data, status, statusText } = await axios.post(
       `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`
     );
