@@ -8,7 +8,7 @@ import router from "./routes/Translation";
 import Localization from "./routes/Localization";
 import contactRouter from "./routes/Contactus";
 import careerRouter from "./routes/Career";
-import { CreateTranscription } from "./services/Translation";
+import quoteRouter from "./routes/QuoteForm";
 import connect from "./config/Database";
 import path from "path";
 import cors from "cors";
@@ -32,6 +32,7 @@ app.use("/api/v1", router);
 app.use("/api/v1", Localization);
 app.use("/api/v1", contactRouter);
 app.use("/api/v1", careerRouter);
+app.use("/api/v1", quoteRouter);
 
 app.post("/validateRecaptcha", async (req, res) => {
   try {
