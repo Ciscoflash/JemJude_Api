@@ -719,7 +719,29 @@ const quoteFormController = async (req: Request, res: Response) => {
                                       <strong
                                         ><span
                                           ><span style="color: #5d77a9"
-                                            >Industory</span
+                                            >Industry</span
+                                          ></span
+                                        ></strong
+                                      >
+                                    </p>
+                                    <p
+                                      style="margin: 0; word-break: break-word"
+                                    >
+                                      <strong
+                                        ><span
+                                          ><span style="color: #5d77a9"
+                                            >Source Language</span
+                                          ></span
+                                        ></strong
+                                      >
+                                    </p>
+                                    <p
+                                      style="margin: 0; word-break: break-word"
+                                    >
+                                      <strong
+                                        ><span
+                                          ><span style="color: #5d77a9"
+                                            >Target Language</span
                                           ></span
                                         ></strong
                                       >
@@ -822,7 +844,17 @@ const quoteFormController = async (req: Request, res: Response) => {
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      ${QuoteDatas.industory}
+                                      ${QuoteDatas.industry}
+                                    </p>
+                                    <p
+                                      style="margin: 0; word-break: break-word"
+                                    >
+                                      ${QuoteDatas.srcLanguage}
+                                    </p>
+                                    <p
+                                      style="margin: 0; word-break: break-word"
+                                    >
+                                      ${QuoteDatas.targetLanguage}
                                     </p>
                                     <p
                                       style="margin: 0; word-break: break-word"

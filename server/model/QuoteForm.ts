@@ -8,7 +8,9 @@ export interface QuoteFormDto extends mongoose.Document {
   language: string;
   file: string;
   companyType: string;
-  industory: string;
+  industry: string;
+  srcLanguage: string;
+  targetLanguage: string;
   message: string;
 }
 
@@ -34,7 +36,13 @@ const QuoteFormSchema = new mongoose.Schema({
   companyType: {
     type: String,
   },
-  industory: {
+  industry: {
+    type: String,
+  },
+  srcLanguage: {
+    type: String,
+  },
+  targetLanguage: {
     type: String,
   },
   message: {
