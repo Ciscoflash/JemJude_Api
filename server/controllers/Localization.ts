@@ -35,7 +35,7 @@ export const CreateLocalizationRequest = async (
     }
 
     const file = req.file?.filename;
-    const filePath = req.file.path;
+    const filePath = req.file?.path;
 
     const LocalizationData = { ...data, file }; // these is to combine the value of data and filename
     const Localization = await createLocalization(LocalizationData);
