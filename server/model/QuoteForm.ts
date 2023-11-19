@@ -29,6 +29,7 @@ const QuoteFormSchema = new mongoose.Schema({
   },
   language: {
     type: String,
+    default: "Not Applicable",
   },
   file: {
     type: String,

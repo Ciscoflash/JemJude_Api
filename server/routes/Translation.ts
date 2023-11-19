@@ -1,6 +1,10 @@
 import { CreateTranslationRequest } from "../controllers/Translation";
 import express from "express";
 const router = express.Router();
-import { upload } from "../controllers/Translation";
-router.post("/translation", upload.single("file"), CreateTranslationRequest);
+import { LocalUploads } from "../controllers/Localization";
+router.post(
+  "/translation",
+  LocalUploads.single("file"),
+  CreateTranslationRequest
+);
 export default router;

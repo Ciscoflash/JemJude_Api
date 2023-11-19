@@ -301,7 +301,7 @@ const quoteFormController = async (req: Request, res: Response) => {
                                     "
                                   >
                                     <span class="tinyMce-placeholder"
-                                      >JEMJUDE GLOBAL BRIDGE</span
+                                      >JEMJUD GLOBAL BRIDGE</span
                                     >
                                   </h1>
                                 </td>
@@ -814,52 +814,92 @@ const quoteFormController = async (req: Request, res: Response) => {
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      <span>${QuoteDatas.serviceType}</span>
+                                      <span>${
+                                        QuoteDatas.serviceType !== ""
+                                          ? QuoteDatas.serviceType
+                                          : "Not 'Applicable"
+                                      }</span>
                                     </p>
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      <span>${QuoteDatas.fullname}</span>
+                                      <span>${
+                                        QuoteDatas.fullname !== ""
+                                          ? QuoteDatas.fullname
+                                          : "Not Applicable"
+                                      }</span>
                                     </p>
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      ${QuoteDatas.email}
+                                      ${
+                                        QuoteDatas.email !== ""
+                                          ? QuoteDatas.email
+                                          : "Not Applicable"
+                                      }
                                     </p>
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      ${QuoteDatas.phone}&nbsp;
+                                      ${
+                                        QuoteDatas.phone !== ""
+                                          ? QuoteDatas.phone
+                                          : "Not Applicable"
+                                      }&nbsp;
                                     </p>
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      ${QuoteDatas.language}
+                                      ${
+                                        QuoteDatas.language !== ""
+                                          ? QuoteDatas.language
+                                          : "Not Applicable"
+                                      }
                                     </p>
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      ${QuoteDatas.companyType}
+                                      ${
+                                        QuoteDatas.companyType !== ""
+                                          ? QuoteDatas.companyType
+                                          : "Not Applicable"
+                                      }
                                     </p>
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      ${QuoteDatas.industry}
+                                      ${
+                                        QuoteDatas.industry !== ""
+                                          ? QuoteDatas.industry
+                                          : "Not Applicable"
+                                      }
                                     </p>
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      ${QuoteDatas.srcLanguage}
+                                      ${
+                                        QuoteDatas.srcLanguage !== ""
+                                          ? QuoteDatas.srcLanguage
+                                          : "Not Applicable"
+                                      }
                                     </p>
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      ${QuoteDatas.targetLanguage}
+                                      ${
+                                        QuoteDatas.targetLanguage !== ""
+                                          ? QuoteDatas.targetLanguage
+                                          : "Not Applicable"
+                                      }
                                     </p>
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      ${QuoteDatas.message}
+                                      ${
+                                        QuoteDatas.message !== ""
+                                          ? QuoteDatas.message
+                                          : "Not Applicable"
+                                      }
                                     </p>
                                   </div>
                                 </td>
@@ -1346,15 +1386,7 @@ const quoteFormController = async (req: Request, res: Response) => {
                                                 text-align: center;
                                               "
                                             >
-                                              <a
-                                                href="http://designedwithbeefree.com/"
-                                                target="_blank"
-                                                style="
-                                                  color: #1e0e4b;
-                                                  text-decoration: none;
-                                                "
-                                                >Designed by Abraham</a
-                                              >
+                                              
                                             </td>
                                           </tr>
                                         </table>

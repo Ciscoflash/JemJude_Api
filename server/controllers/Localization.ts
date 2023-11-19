@@ -801,6 +801,28 @@ export const CreateLocalizationRequest = async (
                                             ></strong
                                           >
                                         </p>
+                                        <p
+                                          style="margin: 0; word-break: break-word"
+                                        >
+                                          <strong
+                                            ><span
+                                              ><span style="color: #5d77a9"
+                                                >Other Project Requirement</span
+                                              ></span
+                                            ></strong
+                                          >
+                                        </p>
+                                        <p
+                                          style="margin: 0; word-break: break-word"
+                                        >
+                                          <strong
+                                            ><span
+                                              ><span style="color: #5d77a9"
+                                                >Other Specialism</span
+                                              ></span
+                                            ></strong
+                                          >
+                                        </p>
                                       </div>
                                     </td>
                                   </tr>
@@ -885,7 +907,7 @@ export const CreateLocalizationRequest = async (
                                         <p
                                           style="margin: 0; word-break: break-word"
                                         >
-                                          ${Localization.description}
+                                          ${Localization.message}
                                         </p>
                                         <p
                                           style="margin: 0; word-break: break-word"
@@ -920,7 +942,26 @@ export const CreateLocalizationRequest = async (
                                         <p
                                           style="margin: 0; word-break: break-word"
                                         >
-                                          ${Localization.contactChannel}
+                                          ${Localization.contactType}
+                                        </p>
+                                        <p
+                                          style="margin: 0; word-break: break-word"
+                                        >
+                                          ${
+                                            Localization.otherprojectRequirement !==
+                                            ""
+                                              ? Localization.otherprojectRequirement
+                                              : "Not Applicable"
+                                          }
+                                        </p>
+                                        <p
+                                          style="margin: 0; word-break: break-word"
+                                        >
+                                          ${
+                                            Localization.otherSpecialism !== ""
+                                              ? Localization.otherSpecialism
+                                              : "Not Applicable"
+                                          }
                                         </p>
                                       </div>
                                     </td>

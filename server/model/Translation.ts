@@ -12,7 +12,10 @@ export interface TranslationDto extends mongoose.Document {
   companyName?: string;
   email?: string;
   phone?: string;
-  contactChannel?: string;
+  contactType?: string;
+  otherDocType?: string;
+  otherprojectRequirement?: string;
+  otherSpecialism?: string;
 }
 
 const TranslationSchema = new mongoose.Schema({
@@ -50,7 +53,16 @@ const TranslationSchema = new mongoose.Schema({
   phone: {
     type: String,
   },
-  contactChannel: {
+  contactType: {
+    type: String,
+  },
+  otherDocType: {
+    type: String,
+  },
+  otherprojectRequirement: {
+    type: String,
+  },
+  otherSpecialism: {
     type: String,
   },
 });

@@ -6,13 +6,15 @@ export interface LocalizationDto extends mongoose.Document {
   designType?: string;
   targetLanguage?: string;
   specialism?: string;
-  description?: string;
+  message?: string;
   firstName?: string;
   lastName?: string;
   companyName?: string;
   email?: string;
   phone?: string;
-  contactChannel?: string;
+  contactType?: string;
+  otherprojectRequirement?: string;
+  otherSpecialism?: string;
 }
 
 const LocalizationSchema = new mongoose.Schema({
@@ -32,7 +34,7 @@ const LocalizationSchema = new mongoose.Schema({
   targetLanguage: {
     type: String,
   },
-  description: {
+  message: {
     type: String,
   },
   firstName: {
@@ -50,7 +52,13 @@ const LocalizationSchema = new mongoose.Schema({
   phone: {
     type: String,
   },
-  contactChannel: {
+  contactType: {
+    type: String,
+  },
+  otherprojectRequirement: {
+    type: String,
+  },
+  otherSpecialism: {
     type: String,
   },
 });

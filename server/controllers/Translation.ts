@@ -28,16 +28,16 @@ const storage = multer.diskStorage({
 //   }
 // };
 
-const fileFilter = function (req: Request, file: any, cb: any) {
-  // Accept only PDF files (you can adjust the mime types accordingly)
-  if (file.mimetype === "application/pdf") {
-    cb(null, true);
-  } else {
-    cb(new Error("Unsupported file type"), false);
-  }
-};
+// const fileFilter = function (req: Request, file: any, cb: any) {
+//   // Accept only PDF files (you can adjust the mime types accordingly)
+//   if (file.mimetype === "application/pdf") {
+//     cb(null, true);
+//   } else {
+//     cb(new Error("Unsupported file type"), false);
+//   }
+// };
 
-export const upload = multer({ storage, fileFilter });
+// export const upload = multer({ storage, fileFilter });
 
 export const CreateTranslationRequest = async (req: Request, res: Response) => {
   try {
@@ -340,7 +340,7 @@ export const CreateTranslationRequest = async (req: Request, res: Response) => {
                                     "
                                   >
                                     <span class="tinyMce-placeholder"
-                                      >JEMJUDE GLOBAL BRIDGE</span
+                                      >JEMJUD GLOBAL BRIDGE</span
                                     >
                                   </h1>
                                 </td>
@@ -818,6 +818,39 @@ export const CreateTranslationRequest = async (req: Request, res: Response) => {
                                         ></strong
                                       >
                                     </p>
+                                    <p
+                                      style="margin: 0; word-break: break-word"
+                                    >
+                                      <strong
+                                        ><span
+                                          ><span style="color: #5d77a9"
+                                            >Other Doctype</span
+                                          ></span
+                                        ></strong
+                                      >
+                                    </p>
+                                    <p
+                                      style="margin: 0; word-break: break-word"
+                                    >
+                                      <strong
+                                        ><span
+                                          ><span style="color: #5d77a9"
+                                            >Other Project Requirement</span
+                                          ></span
+                                        ></strong
+                                      >
+                                    </p>
+                                    <p
+                                      style="margin: 0; word-break: break-word"
+                                    >
+                                      <strong
+                                        ><span
+                                          ><span style="color: #5d77a9"
+                                            >Other Specialism</span
+                                          ></span
+                                        ></strong
+                                      >
+                                    </p>
                                   </div>
                                 </td>
                               </tr>
@@ -875,7 +908,9 @@ export const CreateTranslationRequest = async (req: Request, res: Response) => {
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      <span>${Transcription.projectRequirement}</span>
+                                      <span>${
+                                        Transcription.projectRequirement
+                                      }</span>
                                     </p>
                                     <p
                                       style="margin: 0; word-break: break-word"
@@ -930,7 +965,35 @@ export const CreateTranslationRequest = async (req: Request, res: Response) => {
                                     <p
                                       style="margin: 0; word-break: break-word"
                                     >
-                                      ${Transcription.contactChannel}
+                                      ${Transcription.contactType}
+                                    </p>
+                                    <p
+                                      style="margin: 0; word-break: break-word"
+                                    >
+                                      ${
+                                        Transcription.otherDocType !== ""
+                                          ? Transcription.otherDocType
+                                          : "Not Applicable"
+                                      }
+                                    </p>
+                                    <p
+                                      style="margin: 0; word-break: break-word"
+                                    >
+                                      ${
+                                        Transcription.otherprojectRequirement !==
+                                        ""
+                                          ? Transcription.otherprojectRequirement
+                                          : "Not Applicable"
+                                      }
+                                    </p>
+                                    <p
+                                      style="margin: 0; word-break: break-word"
+                                    >
+                                      ${
+                                        Transcription.otherSpecialism !== ""
+                                          ? Transcription.otherSpecialism
+                                          : "Not Applicable"
+                                      }
                                     </p>
                                   </div>
                                 </td>
