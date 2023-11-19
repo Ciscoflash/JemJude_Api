@@ -318,7 +318,7 @@ export const CreateLocalizationRequest = async (
                                         "
                                       >
                                         <span class="tinyMce-placeholder"
-                                          >JEMJUDE GLOBAL BRIDGE</span
+                                          >JEMJUD GLOBAL BRIDGE</span
                                         >
                                       </h1>
                                     </td>
