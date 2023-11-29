@@ -16,7 +16,8 @@ import axios from "axios";
 connect();
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://translation-services-topaz.vercel.app/",
+  "https://translation-services-topaz.vercel.app",
+  "https://Jemjudglobal.com",
 ];
 app.use(
   cors({
