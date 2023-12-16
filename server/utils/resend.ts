@@ -12,8 +12,8 @@ interface emailData {
 
 const sendEmail = async (data: emailData) => {
   resend.emails.send({
-    // from: "jemjudeglobalbridge@resend.dev",
-    from: "contactjemjudglobal.com@resend.dev",
+    from: "contactjemjudegmail.com@resend.dev",
+    // from: "contactjemjudglobal.com@resend.dev",
     to: `${data.receiver}`,
     subject: `${data.title}`,
     html: `${data.description}`,
