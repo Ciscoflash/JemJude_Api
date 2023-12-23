@@ -15,6 +15,7 @@ export interface LocalizationDto extends mongoose.Document {
   contactType?: string;
   otherprojectRequirement?: string;
   otherSpecialism?: string;
+  orderType?: string;
 }
 
 const LocalizationSchema = new mongoose.Schema({
@@ -23,6 +24,9 @@ const LocalizationSchema = new mongoose.Schema({
     required: true,
   },
   file: {
+    type: String,
+  },
+  orderType: {
     type: String,
   },
   designType: {

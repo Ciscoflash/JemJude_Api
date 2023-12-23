@@ -698,6 +698,18 @@ export const CreateTranslationRequest = async (req: Request, res: Response) => {
                                       >
                                     </p>
                                     <p
+                                    style="margin: 0; word-break: break-word"
+                                  >
+                                    <strong
+                                      ><span
+                                        ><span style="color: #5d77a9"
+                                          >OrderType</span
+                                        ></span
+                                      ></strong
+                                    >
+                                  </p>
+
+                                    <p
                                       style="margin: 0; word-break: break-word"
                                     >
                                       <strong
@@ -911,6 +923,11 @@ export const CreateTranslationRequest = async (req: Request, res: Response) => {
                                       <span>${
                                         Transcription.projectRequirement
                                       }</span>
+                                    </p>
+                                    <p
+                                      style="margin: 0; word-break: break-word"
+                                    >
+                                      <span>${Transcription.orderType}</span>
                                     </p>
                                     <p
                                       style="margin: 0; word-break: break-word"

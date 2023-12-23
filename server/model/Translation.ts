@@ -16,12 +16,16 @@ export interface TranslationDto extends mongoose.Document {
   otherDocType?: string;
   otherprojectRequirement?: string;
   otherSpecialism?: string;
+  orderType?: string;
 }
 
 const TranslationSchema = new mongoose.Schema({
   projectRequirement: {
     type: String,
     required: true,
+  },
+  orderType: {
+    type: String,
   },
   docType: {
     type: String,

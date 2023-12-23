@@ -675,6 +675,17 @@ export const CreateLocalizationRequest = async (
                                             ></strong
                                           >
                                         </p>
+                                        <p
+                                          style="margin: 0; word-break: break-word"
+                                        >
+                                          <strong
+                                            ><span
+                                              ><span style="color: #5d77a9"
+                                                >OrderType</span
+                                              ></span
+                                            ></strong
+                                          >
+                                        </p>
 
                                         <p
                                           style="margin: 0; word-break: break-word"
@@ -883,6 +894,11 @@ export const CreateLocalizationRequest = async (
                                           <span>${
                                             Localization.projectRequirement
                                           }</span>
+                                        </p>
+                                        <p
+                                          style="margin: 0; word-break: break-word"
+                                        >
+                                          <span>${Localization.orderType}</span>
                                         </p>
 
                                         <p
